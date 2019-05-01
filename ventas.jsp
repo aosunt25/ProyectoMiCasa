@@ -70,6 +70,12 @@
                 <form method="post" action="./CrearVenta">
                     <input class="button_settings" type="submit" name="+" value="+">
                 </form>
+                <form method="post" action="./BuscarVenta">
+                        <input type="text" name="Venta" id="Venta" placeholder="Buscar Venta"><input class="user-list button_settings"  type="submit" value="Buscar">
+                 </form>
+                 <form method="post" action="./ConsultarVentas">
+                     <input class="user-list button_settings"  type="submit" value="Reiniciar Busqueda"><input class="button" type="submit" value="VENTAS"></a>
+                </form>
             </div>
            
 
@@ -77,6 +83,17 @@
         </div>
 
 
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
         <div class="div3">
             <div class="quinto quinto_primero center">No.</div>
             <div class="quinto center">FECHA</div>
@@ -87,7 +104,6 @@
 
 
 
-    </section>
     <div class = "div2">
         <div class="ex1">
             <table border="1">
