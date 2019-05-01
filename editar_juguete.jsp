@@ -26,6 +26,7 @@
             <li>Cantidad: <input class="formx" type="text" name="Cantidad" id="Cantidad" placeholder="cantidad" value="${jug.cantidad}"></li>
             <li>Precio: <input class="formx" type="text" name="Precio" id="Precio" placeholder="precio" value="${requestScope.jug.precio}"> </li>
             <input type="hidden" name="Id" id="Id" value="${jug.id}" />
+            <input type="hidden" name="Editado" id="Editado" value="1" />
             <br>
             <li><input class="user-list button_settings-1" type="submit" value="Editar"></li>
         </ul>

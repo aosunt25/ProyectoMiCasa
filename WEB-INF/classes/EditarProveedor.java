@@ -32,6 +32,7 @@ public class EditarProveedor extends HttpServlet{
 			String nombre = request.getParameter("Proveedor");
 			int id = Integer.parseInt(request.getParameter("Id"));
 			String telefono = request.getParameter("Telefono");
+			int editado=Integer.parseInt(request.getParameter("Editado"));
 			
 
 		
@@ -51,25 +52,25 @@ public class EditarProveedor extends HttpServlet{
 			prov.setNombre(nombre);
 			prov.setTelefono(telefono);
 
-			
-			
 
-			
 			stat.close();
 			con.close();
 
 			String mensaje = "Se edito correctamente el proveedor";
 			request.setAttribute("mensaje",mensaje);
 			request.setAttribute("prov",prov);
-
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_proveedor.jsp");
-			if(disp!=null){
+			if(editado==1){
+				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_proveedor_exito.jsp");
+				if(disp!=null){
 				disp.forward(request,response);
+				}
 			}
-			
-
-			
-
+			else{
+				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_proveedor.jsp");
+				if(disp!=null){
+				disp.forward(request,response);
+				}
+			}
 
 		}
 		catch(Exception e){

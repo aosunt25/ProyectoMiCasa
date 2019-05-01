@@ -111,6 +111,7 @@
 										<input type= "hidden" name="Id" id = "Id" value="${prov.id}"/>
 										<input type= "hidden" name="Proveedor" id = "Proveedor" value="${prov.nombre}"/>
 										<input type= "hidden" name="Telefono" id = "Telefono" value="${prov.telefono}"/>
+										<input type="hidden" name="Editado" id="Editado" value="0">
 									</form>
 									</td>
 									<td>

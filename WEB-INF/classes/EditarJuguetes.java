@@ -33,6 +33,7 @@ public class EditarJuguetes extends HttpServlet{
 			int id = Integer.parseInt(request.getParameter("Id"));
 			Double precio = Double.parseDouble(request.getParameter("Precio"));
 			int cantidad = Integer.parseInt(request.getParameter("Cantidad"));
+			int editado=Integer.parseInt(request.getParameter("Editado"));
 
 		
 			Statement stat = con.createStatement();
@@ -68,15 +69,18 @@ public class EditarJuguetes extends HttpServlet{
 			
 			stat.close();
 			con.close();
-
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_juguete.jsp");
-			if(disp!=null){
+			if(editado==1){
+				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_juguete_exito.jsp");
+				if(disp!=null){
 				disp.forward(request,response);
+				}
 			}
-			
-
-			
-
+			else{
+				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/editar_juguete.jsp");
+				if(disp!=null){
+				disp.forward(request,response);
+				}
+			}
 
 		}
 		catch(Exception e){

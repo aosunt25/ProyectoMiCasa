@@ -24,6 +24,7 @@
             <li>Nombre: <input class="formx" type="text" name="Proveedor" id ="Proveedor" placeholder="proveedor" value="${prov.nombre}" ></li>
             <li>Telefono: <input class="formx" type="text" name="Telefono" id ="Telefono" placeholder="contacto" value="${prov.telefono}"></li>
             <input type= "hidden" name="Id" id = "Id" value="${prov.id}"/>
+            <input type="hidden" name="Editado" id="Editado" value="1">
             <br>
             <li><input class="user-list button_settings-1" type="submit" value="Editar"></li>
         </ul>

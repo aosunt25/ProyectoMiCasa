@@ -43,5 +43,8 @@
 			
 		
 	</body>
+		<form method="post" action="./ConsultarOrden">
+    <input class="button_settings-1" type="submit" value="Regresar">
+    </form>
 </html>
 

@@ -142,6 +142,7 @@
                             <input type="hidden" name="Juguete" id="Juguete" value="${jug.nombre}" />
                             <input type="hidden" name="Precio" id="Precio" value="${jug.precio}" />
                             <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.cantidad}" />
+                            <input type="hidden" name="Editado" id="Editado" value="0">
                         </form>
                     </td>
                     <td>
