@@ -27,10 +27,9 @@
 	</head>
 	<header>
     <a href="menu.jsp"><img src="img/1.jpg"> Comercializadora MiCasa </a>
-
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="index.html"><input class="button_settings-1" id="boton" type="button" value="Cerrar sesion"> </a>
 
-	</header>
+</header>
 	<body>
 		<br>
 		<br>
