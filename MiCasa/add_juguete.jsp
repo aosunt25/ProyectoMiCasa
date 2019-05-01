@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Anadir nuevo juguete a inventario</h1>
+    <h1>Anadir juguete a inventario</h1>
     <br>
     <br>
     <br>
