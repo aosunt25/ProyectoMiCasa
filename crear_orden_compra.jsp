@@ -45,6 +45,7 @@ div.ex1 {
     <meta charset=utf-8>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/crear_oc-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/especial.css">
 
 </head>
 
@@ -58,13 +59,13 @@ div.ex1 {
     <nav>
         <footer>
              <br>
-            Nombre del Proveedor: <c:out value = "${requestScope.proveedor.nombre}"/>
+           <h2> Nombre del Proveedor: <c:out value = "${requestScope.proveedor.nombre}"/></h2>
              <br>
              <br>
         </footer>      
             <br>
             <tab class = "ex1">
-            <select id ="JugueteID" name="JugueteID">
+            <select class="especial" id ="JugueteID" name="JugueteID">
                 <option value="">Nombre Juguetes</option>
                 <c:forEach items="${requestScope.juguetes}" var="jug">
                     <option value="${jug.id}">
@@ -75,11 +76,11 @@ div.ex1 {
             </select>
             <br>
             <br>
-            <input type="text" name="Cantidad" placeholder="cantidad">
+            <input class="especial" type="text" name="Cantidad" placeholder="cantidad">
                 <br>
                 <br>
              	<br>
-               <input type="submit" value="Agregar">
+               <input class="btt-settings" type="submit" value="Agregar">
                <input type="hidden" name="Proveedor" id = "Proveedor" value="${requestScope.proveedor.id}">
                <input type="hidden" name="NumOrden" id="NumOrden" value="${requestScope.orden.id}" />
    
@@ -87,12 +88,13 @@ div.ex1 {
    </form>
     <article>
         <footer>
+               <br>
                 <h2>
                 Total de Orden
                 </h2>
                 </footer>
                 <br>
-                <table border="1">
+                <h2><table border="1">
                     <c:forEach items="${requestScope.jugOrden}" var="jug">
                         <tr>
                             <td>
@@ -110,13 +112,13 @@ div.ex1 {
                                 <br />
                             </td>
                             <td>
-                                <form method="post" action="./BorrarJugueteDeOrden">
+                                <!-- <form method="post" action="./BorrarJugueteDeOrden">
                                     <input class="user-list button_settings" type="submit" value="Borrar">
                                     <input type="hidden" name="Id" id="Id" value="${jug.id}" />
                                     <input type="hidden" name="NumVentas" id="NumVentas" value="${requestScope.ventas.id}" />
                                     <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.precio_proveedor}" />
 
-                                </form>
+                                </form> -->
                             </td>
                         </tr>
 
@@ -124,11 +126,12 @@ div.ex1 {
                     </c:forEach>
 
                     <c:out value="${requestScope.error}" />
-                </table>
+                </table></h2>
+                
 
     </article>
        <footer>
-       Precio: $<c:out value ="${requestScope.orden.cantidad_total}" />
+       <h2>Precio: $<c:out value ="${requestScope.orden.cantidad_total}" /></h2>
         <br>
         <br>
          <br>
