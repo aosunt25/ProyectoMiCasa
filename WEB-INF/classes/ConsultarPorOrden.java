@@ -6,6 +6,8 @@ import juguetes.Juguete;
 import proveedores.Proveedor;
 import java.util.Vector;
 import ordenesCompra.OrdenesCompra;
+import java.util.Date;
+import java.text.SimpleDateFormat; 
 
 
 import javax.servlet.annotation.WebServlet;
@@ -74,7 +76,18 @@ public class ConsultarPorOrden extends HttpServlet{
 			orden.setId(id_orden);
 
 			if(res.next()){
+					String fechaRes = res.getString("Orden_Compra.fecha_respuesta");
+					String fechaEnt = res.getString("Orden_Compra.fecha_solicitud");
+					Date dateRes = new SimpleDateFormat("yyyy-MM-dd").parse(fechaRes);
+					Date datEnt = new SimpleDateFormat("yyyy-MM-dd").parse(fechaEnt);
 
+					SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");
+
+					fechaRes = sm.format(dateRes);
+					fechaEnt = sm.format(datEnt);
+
+				orden.setFechaEntrega(fechaEnt);
+				orden.setFechaPedido(fechaRes);
 				orden.setCantidadTotal(res.getDouble("costo_total"));
 			}
 

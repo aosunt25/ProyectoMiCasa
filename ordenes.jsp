@@ -76,8 +76,7 @@
 
             <div class="div3">
                 <div class="quinto quinto_primero center">No.</div>
-                <div class="quinto center">TOTAL JUGUETES</div>
-                <div class="quinto center">FECHA SOLICITUD</div>
+                <div class="quinto quinto_primero center">PROVEEDOR</div>
                 <div class="quinto center">FECHA DE ENTREGA</div>
                 <div class="quinto center">COSTO TOTAL</div>
 
@@ -91,25 +90,19 @@
                     <c:forEach items="${requestScope.ordenes}" var="orden">
                                 <tr>
                                 <td>
-                                        <c:out value="${orden.proveedor}" />
+                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.id}" />
                                         <br />
                                     </td>
-
                                 <td>
-                                        <c:out value="${orden.cantidad_juguete}" />
+                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.proveedor}" />
                                         <br />
-                                    </td>
-                                    
-                                    <td>
-                                    <c:out value="${orden.fechaEntrega}" />
-                                        <br />
-                                    </td>
-                                    <td>
-                                        <c:out value="${orden.fechaPedido}" />
+                                    </td>  
+                                    <td>   
+                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.fechaPedido}" />
                                         <br />
                                     </td>
                                     <td>
-                                        <c:out value="${orden.cantidad_total}" />
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.cantidad_total}" />&emsp;&emsp;&emsp;&emsp;
                                         <br />
                                     </td>
                                     <td>

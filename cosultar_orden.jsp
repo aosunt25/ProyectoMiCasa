@@ -54,10 +54,20 @@ section:after {
                 Nombre del Proveedor:
                     <c:out value="${requestScope.prov.nombre}"/>
                 </h3>
+                <br><br>
+                <h3>
+                Fecha de Solicitud:
+                    <c:out value="${requestScope.orden.fechaEntrega}"/>
+                </h3>
+                <br><br>
+                <h3>
+                Fecha de Entrega:
+                    <c:out value="${requestScope.orden.fechaPedido}"/>
+                </h3>
             
                 <br>
                 <br>
-                <br><br><br><br><br><br><br><br>
+                <br><br><br>
                 Precio $
                 <c:out value="${requestScope.orden.cantidad_total}" />
 
