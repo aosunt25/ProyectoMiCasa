@@ -65,8 +65,7 @@
                 </form>
                 </div>
 
-                <div class="tercio">
-                <a href="borrar_orden.jsp"><input class="button_settings" type="button" name="-" value="-"></a></div>
+                
                 
                 
 
