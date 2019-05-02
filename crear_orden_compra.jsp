@@ -15,7 +15,7 @@ nav {
   width: 40%;
   height: 300px;
   padding: 20px;
-  text-align: left;
+  text-align: center;
   /* only for demonstration, should be removed */
   background: #ccc;
   
@@ -64,7 +64,7 @@ div.ex1 {
         </footer>      
             <br>
             <tab class = "ex1">
-            <li> <select id ="JugueteID" name="JugueteID">
+            <select id ="JugueteID" name="JugueteID">
                 <option value="">Nombre Juguetes</option>
                 <c:forEach items="${requestScope.juguetes}" var="jug">
                                     <option value="${jug.id}">
@@ -72,11 +72,14 @@ div.ex1 {
                                     </option>
                  </c:forEach>
 
-                </select></li>
-            <li><input type="text" name="Cantidad" placeholder="cantidad"></li>
+            </select>
+            <br>
+            <br>
+            <input type="text" name="Cantidad" placeholder="cantidad">
                 <br>
-                
-               <li><input type="submit" value="Agregar"></li>
+                <br>
+             	<br>
+               <input type="submit" value="Agregar">
    
     </nav>
     <article>
