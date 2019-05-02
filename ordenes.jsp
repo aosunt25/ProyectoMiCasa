@@ -65,8 +65,7 @@
                 </form>
                 </div>
 
-                <div class="tercio">
-                <a href="borrar_orden.jsp"><input class="button_settings" type="button" name="-" value="-"></a></div>
+                
                 
                 
 
@@ -76,8 +75,7 @@
 
             <div class="div3">
                 <div class="quinto quinto_primero center">No.</div>
-                <div class="quinto center">TOTAL JUGUETES</div>
-                <div class="quinto center">FECHA SOLICITUD</div>
+                <div class="quinto quinto_primero center">PROVEEDOR</div>
                 <div class="quinto center">FECHA DE ENTREGA</div>
                 <div class="quinto center">COSTO TOTAL</div>
 
@@ -91,30 +89,26 @@
                     <c:forEach items="${requestScope.ordenes}" var="orden">
                                 <tr>
                                 <td>
-                                        <c:out value="${orden.proveedor}" />
+                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.id}" />
                                         <br />
                                     </td>
-
                                 <td>
-                                        <c:out value="${orden.cantidad_juguete}" />
+                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.proveedor}" />
                                         <br />
-                                    </td>
-                                    
-                                    <td>
-                                        <c:out value="${orden.fechaPedido}" />
-                                         <br />
-                                    </td>
-                                    <td>
-                                    <c:out value="${orden.fechaEntrega}" />
+                                    </td>  
+                                    <td>   
+                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.fechaPedido}" />
                                         <br />
                                     </td>
                                     <td>
-                                        <c:out value="${orden.fechaPedido}" />
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.cantidad_total}" />&emsp;&emsp;&emsp;&emsp;
                                         <br />
                                     </td>
                                     <td>
-                                        <c:out value="${orden.cantidad_total}" />
-                                        <br />
+                                        <form method="post" action= "./ConsultarPorOrden">
+                                        <input class="user-list button_settings" type="submit" value="Mostrar">
+                                        <input type= "hidden" name="Id" id = "Id" value="${orden.id}"/>  
+                                        </form>
                                     </td>
                                 </tr>
                               </c:forEach>

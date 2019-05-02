@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import proveedores.Proveedor;
 import java.util.Vector;
+import ordenesCompra.OrdenesCompra;
 
 import javax.servlet.annotation.WebServlet;
 
