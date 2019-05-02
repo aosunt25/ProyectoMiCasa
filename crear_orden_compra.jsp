@@ -58,7 +58,7 @@ div.ex1 {
     <nav>
         <footer>
              <br>
-            Nombre del Proveedor: <c:out value = "${requestScope.proveedor.nombre}"/>
+            Nombre del Proveedor Hola: <c:out value = "${requestScope.proveedor.nombre}"/>
              <br>
              <br>
         </footer>      
