@@ -64,15 +64,15 @@ div.ex1 {
         </footer>      
             <br>
             <tab class = "ex1">
-            <c:forEach items="${requestScope.juguetes}" var="jug" >
-                        <input type="checkbox" name= "id" value="${jug.id}" id="id">
-                        <c:out value="${jug.nombre}  ${jug.precio_proveedor}" />
-                        <input type="number" name="cantidad" id = "cantidad" placeholder="Cantidad">
-                        </br>
-                        
-                        
-                
-            </c:forEach>
+            <li> <select id ="JugueteID" name="JugueteID">
+                <option value="">Nombre Juguetes</option>
+                <c:forEach items="${requestScope.juguetes}" var="jug">
+                                    <option value="${jug.id}">
+                                        <c:out value = "${jug.nombre}"></c:out>
+                                    </option>
+                 </c:forEach>
+
+                </select></li>
             </div>
    
     </nav>
