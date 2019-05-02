@@ -73,7 +73,10 @@ div.ex1 {
                  </c:forEach>
 
                 </select></li>
-            </div>
+            <li><input type="text" name="Cantidad" placeholder="cantidad"></li>
+                <br>
+                
+               <li><input type="submit" value="Agregar"></li>
    
     </nav>
     <article>
