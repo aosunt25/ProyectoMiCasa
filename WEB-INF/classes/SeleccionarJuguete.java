@@ -5,6 +5,8 @@ import java.sql.*;
 import juguetes.Juguete;
 import proveedores.Proveedor;
 import java.util.Vector;
+import ordenesCompra.OrdenesCompra;
+
 
 import javax.servlet.annotation.WebServlet;
 
@@ -50,8 +52,6 @@ public class SeleccionarJuguete extends HttpServlet{
 					jug.setID(res.getInt("Juguete.id"));
 
 					juguetes.add(jug);
-				
-		
 			}
 
 			sql = "SELECT * FROM Proveedor WHERE id = '"+id_proveedor+"'";
@@ -64,12 +64,35 @@ public class SeleccionarJuguete extends HttpServlet{
 				proveedor.setID(res.getInt("id"));
 			}
 			
+		
+
+			sql = "SELECT * FROM Orden_Compra WHERE costo_total=0;";
+
+			res = stat.executeQuery(sql);
+
+			OrdenesCompra orden = new OrdenesCompra();
+			if(!res.next()){
+				sql= "INSERT INTO Orden_Compra(id_proveedor, fecha_solicitud, fecha_respuesta) VALUES ('"+proveedor.getId()+"', CURRENT_DATE, CURRENT_DATE);";
+				stat.executeUpdate(sql);
+
+				sql = "SELECT id FROM Orden_Compra WHERE costo_total=0;";
+				res = stat.executeQuery(sql);
+
+				if(res.next()){
+					orden.setId(res.getInt("id"));
+				}
+				
+			}
+			else{
+				orden.setId(res.getInt("id"));
+			}
 			stat.close();
 			con.close();
 
 			//preguntare
 			request.setAttribute("proveedor", proveedor);
 			request.setAttribute("juguetes",juguetes);
+			request.setAttribute("orden",orden);
 
 			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/crear_orden_compra.jsp");
 

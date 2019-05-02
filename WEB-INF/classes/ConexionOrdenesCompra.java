@@ -7,7 +7,7 @@ import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/OrdenesCompra")
+@WebServlet("/AgregarOrdenDeCompra")
 public class ConexionOrdenesCompra extends HttpServlet{
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -30,48 +30,45 @@ public class ConexionOrdenesCompra extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,usuarioBase,contraseña);
 
 
-			String fecha_solicitud= request.getParameter("AnioDeSolicitud")+"-"+request.getParameter("MesDeSolicitud")+"-"+request.getParameter("DiaDeSolicitud");
-			String fecha_respuesta= request.getParameter("AnioDeEntrega")+"-"+request.getParameter("MesDeEntrega")+"-"+request.getParameter("DiaDeEntrega");
-			String totalDeJuguetes = request.getParameter("totalJuguetes");
-			String costoTotal = request.getParameter("CostoTotal");
-			String usuario = request.getParameter("Usuario");
-			String proveedor= request.getParameter("Proveedor");
-		
-
+			int id_juguete=Integer.parseInt(request.getParameter("JugueteID"));
+			int cantidad = Integer.parseInt(request.getParameter("Cantidad"));
+			int id_orden= Integer.parseInt(request.getParameter("NumOrden"));
+			int id_proveedor=Integer.parseInt(request.getParameter("Proveedor"));
 			Statement stat = con.createStatement();
-			String sql = "SELECT * FROM Proveedor, Usuario WHERE Proveedor.nombre ='"+proveedor+"' and Usuario.usuario ='"+usuario+"';";
 
+			//double precio = 0;
+		
+			//String sql = "INSERT INTO Proveedor (nombre, contacto) VALUES ('1','1')";
+			String sql = "SELECT * FROM Juguete, Orden_Compra WHERE Juguete.id = '"+id_juguete+"' and Orden_Compra.id ='"+id_orden+"';";
+			//Hay que sumar todos los precios del agregar
+			//Hay que restarle la cantidad a la tabla cantidad
+			//Hay que mostrar el total en jsp
+			//Hay que mostrar los juguetes en js
 			ResultSet res = stat.executeQuery(sql);
 
 			if(res.next()){
-				int proveedorID= res.getInt("Proveedor.id");
-				int usuarioID = res.getInt("Usuario.id");
 
-				sql="INSERT INTO Orden_Compra (total_de_juguetes, costo_total, id_proveedor, id_usuario, fecha_solicitud, fecha_respuesta) VALUES ( '"+totalDeJuguetes+"','"+costoTotal+"', '"+proveedorID+"','"+usuarioID+"','"+fecha_solicitud+"','"+fecha_respuesta+"');";
-
+				double precioJuguete = res.getDouble("Juguete.precio_proveedor"); 
+				double nuevoPrecio= res.getDouble("Orden_Compra.costo_total") + (cantidad * res.getDouble("Juguete.precio_proveedor"));
+				sql = "UPDATE Orden_Compra SET costo_total ="+nuevoPrecio+" WHERE Orden_Compra.id ="+id_orden+";";
+			
 				stat.executeUpdate(sql);
 
-				stat.close();
-				con.close();
-
-				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/anadir_orden.jsp");
-
-				if(disp!=null){
-					disp.forward(request,response);
-				}
+				sql= "INSERT INTO Orden_Juguete (id_orden, id_juguete) VALUES ('"+id_orden+"', '"+id_juguete+"');";
+				
+				stat.executeUpdate(sql);
 			}
-			else{
 
-				stat.close();
-				con.close();
 
+
+		
 				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error_orden.jsp");
 
 				if(disp!=null){
 					disp.forward(request,response);
 				}
 
-			}
+			
 		
 
 		}
