@@ -29,7 +29,8 @@ public class BuscarProveedor extends HttpServlet{
 			
 
 			Statement stat = con.createStatement();
-			String sql = "SELECT * FROM Proveedor WHERE nombre ='"+proveedor+"'";
+		
+			String sql = "SELECT * FROM Proveedor WHERE nombre LIKE '%"+proveedor+"%'";
 
 			ResultSet res = stat.executeQuery(sql);
 

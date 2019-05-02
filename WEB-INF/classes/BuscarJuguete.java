@@ -29,7 +29,7 @@ public class BuscarJuguete extends HttpServlet{
 			
 
 			Statement stat = con.createStatement();
-			String sql = "SELECT * FROM Juguete, Proveedor WHERE Juguete.nombre = '"+juguete+"'";
+			String sql = "SELECT * FROM Juguete, Proveedor WHERE Juguete.nombre LIKE '%"+juguete+"%'";
 
 			ResultSet res = stat.executeQuery(sql);
 
