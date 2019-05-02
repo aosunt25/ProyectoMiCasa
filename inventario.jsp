@@ -1,12 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <style type="text/css">
-     div.ex1 {
-  width: 800px;
-  height: 500px;
-  overflow: scroll;
-}
+    div.ex1 {
+        width: 800px;
+        height: 500px;
+        overflow: scroll;
+    }
+
 </style>
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -67,29 +69,29 @@
 
 
         <div class="edicion">
-            
-                <div class="tercio tercio_primero">
-                    <form action= "./ConsultarProveedor_Juguete" method="post">
-                            <input class="button_settings" type="submit" name="+" value="+"> </a>
-                        </form>
-                        
-                    </div>
+
+            <div class="tercio tercio_primero">
+                <form action="./ConsultarProveedor_Juguete" method="post">
+                    <input class="button_settings" type="submit" name="+" value="+">
+                </form>
+
+            </div>
         </div>
         <section>
             <div class="edicion">
-                
-                    <form method="post" action="./BuscarJuguete">
-                        <input type="text" name="Juguete" id="Juguete" placeholder="Buscar Juguete"><input class="user-list button_settings"  type="submit" value="Buscar">
-                    </form>
-               
-                    <form method="post" action="./ConsultaInventario">
-                        <input class="user-list button_settings"  type="submit" value="Reiniciar Busqueda">
-                    </form>
-                
-                    <form method="post" action="./JugutesEscasos">
-                        <input class="user-list button_settings"  type="submit" value="Mostrar Juguetes Escasos">
-                    </form>
-                
+
+                <form method="post" action="./BuscarJuguete">
+                    <input type="text" name="Juguete" id="Juguete" placeholder="Buscar Juguete"><input class="user-list button_settings" type="submit" value="Buscar">
+                </form>
+
+                <form method="post" action="./ConsultaInventario">
+                    <input class="user-list button_settings" type="submit" value="Reiniciar Busqueda">
+                </form>
+
+                <form method="post" action="./JugutesEscasos">
+                    <input class="user-list button_settings" type="submit" value="Mostrar Juguetes Escasos">
+                </form>
+
 
             </div>
         </section>
@@ -114,47 +116,49 @@
 
     </section>
     <div class="div2 DivToScroll DivWithScroll">
-        <div class ="ex1">
-        <table border="1">
-           <br>
-            <c:forEach items="${requestScope.juguetes}" var="jug">
-                <tr>
-                    <td>
-                        <c:out value="${jug.nombre}" />
-                        <br />
-                    </td>
-                    <td>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${jug.cantidad}" />
-                        <br />
-                    </td>
-                   <td>
-                       &emsp;&emsp;&emsp;&emsp;&emsp; <c:out value="${jug.precio}" />
-                        <br />
-                    <td/>
-                    <td>
-                        <c:out value="${jug.nombreProveedor}" />
-                        <br />
-                    <td/>
-                    <td>
-                        <form method="post" action="./EditarJuguetes">
-                            <input class="user-list button_settings" type="submit" value="Editar">
-                            <input type="hidden" name="Id" id="Id" value="${jug.id}" />
-                            <input type="hidden" name="Juguete" id="Juguete" value="${jug.nombre}" />
-                            <input type="hidden" name="Precio" id="Precio" value="${jug.precio}" />
-                            <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.cantidad}" />
-                            <input type="hidden" name="Editado" id="Editado" value="0">
-                        </form>
-                    </td>
-                    <td>
-                        <form method="post" action="./BorrarJuguete">
-                            <input class="user-list button_settings" type="submit" value="Borrar">
-                            <input type="hidden" name="Id" id="Id" value="${jug.id}" />
-                        </form>
-                    </td>
+        <div class="ex1">
+            <table border="1">
+                <br>
+                <c:forEach items="${requestScope.juguetes}" var="jug">
+                    <tr>
+                        <td>
+                            <c:out value="${jug.nombre}" />
+                            <br />
+                        </td>
+                        <td>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${jug.cantidad}" />
+                            <br />
+                        </td>
+                        <td>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${jug.precio}" />
+                            <br />
+                            <td />
+                        <td>
+                            <c:out value="${jug.nombreProveedor}" />
+                            <br />
+                            <td />
+                        <td>
+                            <form method="post" action="./EditarJuguetes">
+                                <input class="user-list button_settings" type="submit" value="Editar">
+                                <input type="hidden" name="Id" id="Id" value="${jug.id}" />
+                                <input type="hidden" name="Juguete" id="Juguete" value="${jug.nombre}" />
+                                <input type="hidden" name="Precio" id="Precio" value="${jug.precio}" />
+                                <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.cantidad}" />
+                                <input type="hidden" name="Editado" id="Editado" value="0">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="./BorrarJuguete">
+                                <input class="user-list button_settings" type="submit" value="Borrar">
+                                <input type="hidden" name="Id" id="Id" value="${jug.id}" />
+                            </form>
+                        </td>
 
-                </tr>
-            </c:forEach>
-        </table>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
 
     </div>
