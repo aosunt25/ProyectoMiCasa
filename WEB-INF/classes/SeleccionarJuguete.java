@@ -85,6 +85,7 @@ public class SeleccionarJuguete extends HttpServlet{
 			}
 			else{
 				orden.setId(res.getInt("id"));
+				orden.setCantidadTotal(res.getDouble("costo_total"));
 			}
 			stat.close();
 			con.close();

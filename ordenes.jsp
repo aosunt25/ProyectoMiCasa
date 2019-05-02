@@ -101,10 +101,6 @@
                                     </td>
                                     
                                     <td>
-                                        <c:out value="${orden.fechaPedido}" />
-                                         <br />
-                                    </td>
-                                    <td>
                                     <c:out value="${orden.fechaEntrega}" />
                                         <br />
                                     </td>
@@ -115,6 +111,12 @@
                                     <td>
                                         <c:out value="${orden.cantidad_total}" />
                                         <br />
+                                    </td>
+                                    <td>
+                                        <form method="post" action= "./ConsultarPorOrden">
+                                        <input class="user-list button_settings" type="submit" value="Mostrar">
+                                        <input type= "hidden" name="Id" id = "Id" value="${orden.id}"/>  
+                                        </form>
                                     </td>
                                 </tr>
                               </c:forEach>

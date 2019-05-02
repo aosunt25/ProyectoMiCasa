@@ -88,19 +88,20 @@ div.ex1 {
     <article>
         <footer>
                 <h2>
-                Total de venta
+                Total de Orden
                 </h2>
                 </footer>
                 <br>
                 <table border="1">
-                    <c:forEach items="${requestScope.juguete}" var="jug">
+                    <c:forEach items="${requestScope.jugOrden}" var="jug">
                         <tr>
                             <td>
                                 <c:out value="${jug.nombre}" />
                                 <br />
                             </td>
                             <td>
-                                <c:out value="${jug.cantidad}" />
+                            	$
+                                <c:out value="${jug.precio_proveedor}" />
                                 <br />
                             </td>
                             <td>
@@ -109,11 +110,11 @@ div.ex1 {
                                 <br />
                             </td>
                             <td>
-                                <form method="post" action="./BorrarJugueteDeVenta">
+                                <form method="post" action="./BorrarJugueteDeOrden">
                                     <input class="user-list button_settings" type="submit" value="Borrar">
                                     <input type="hidden" name="Id" id="Id" value="${jug.id}" />
                                     <input type="hidden" name="NumVentas" id="NumVentas" value="${requestScope.ventas.id}" />
-                                    <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.cantidad}" />
+                                    <input type="hidden" name="Cantidad" id="Cantidad" value="${jug.precio_proveedor}" />
 
                                 </form>
                             </td>
@@ -124,22 +125,30 @@ div.ex1 {
 
                     <c:out value="${requestScope.error}" />
                 </table>
+
     </article>
        <footer>
+       Precio: $<c:out value ="${requestScope.orden.cantidad_total}" />
         <br>
         <br>
          <br>
-        <input type="text" name="DiaDeSolicitud" placeholder="Dia solicitud" ><input type="text" name="MesDeSolicitud" placeholder="Mes solicitud" ><input type="text" name="AnioDeSolicitud" placeholder="Anio solicitud" >
-        <br>
-        <input type="text" name="DiaDeEntrega" placeholder="Dia entrega" ><input type="text" name="MesDeEntrega" placeholder="Mes entrega" ><input type="text" name="AnioDeEntrega" placeholder="Anio entrega" >
-        <br>
-        <br>
-    </footer>
-    </section>
     </form>
-    <br>
-    <form method="post" action="./ConsultarOrden">
-    <input class="button_settings-1" type="submit" value="Terminar">
+
+    <form method="post" action="./TerminarOrdenDeCompra">
+	        <input type="text" id="DiaDeSolicitud"  name="DiaDeSolicitud" placeholder="Dia solicitud" >
+	        <input type="text" name="MesDeSolicitud" id="MesDeSolicitud" placeholder="Mes solicitud" >
+	        <input type="text" name="AnioDeSolicitud" id= "AnioDeSolicitud" placeholder="Anio solicitud" >
+	        <br>
+	        <input type="text" id="DiaDeEntrega" name="DiaDeEntrega" placeholder="Dia entrega" >
+	        <input type="text" name="MesDeEntrega" id="MesDeEntrega" placeholder="Mes entrega" >
+	        <input type="text" name="AnioDeEntrega" id="AnioDeEntrega" placeholder="Anio entrega" >
+	        <br>
+	        <br>
+	    </footer>
+	    </section>
+	    <br>
+	    <input class="button_settings-1" type="submit" value="Terminar">
+	    <input type="hidden" name="NumOrden" id="NumOrden" value="${requestScope.orden.id}" />
     </form>
  
 </body>

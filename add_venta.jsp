@@ -107,7 +107,7 @@ footer {
                                 <br />
                             </td>
                             <td>
-                                <form method="post" action="./BorrarJugueteDeOrden">
+                                <form method="post" action="./BorrarJugueteDeVenta">
                                     <input class="user-list button_settings" type="submit" value="Borrar">
                                     <input type="hidden" name="Id" id="Id" value="${jug.id}" />
                                     <input type="hidden" name="NumVentas" id="NumVentas" value="${requestScope.ventas.id}" />

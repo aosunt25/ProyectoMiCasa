@@ -48,10 +48,10 @@ public class ConsultarOrden extends HttpServlet{
 					//orden.setCantidadJug(res.getInt("total_de_juguetes"));
 					//orden.setCantidadTotal(res.getDouble("costo_total"));
 
-					String fechaRes = res.getString("fecha_respuesta");
-					String fechaEnt = res.getString("fecha_solicitud");
+					String fechaRes = res.getString("Orden_Compra.fecha_respuesta");
+					String fechaEnt = res.getString("Orden_Compra.fecha_solicitud");
 					Date dateRes = new SimpleDateFormat("yyyy-MM-dd").parse(fechaRes);
-					Date datEnt = new SimpleDateFormat("yyyy-MM-dd").parse(fechaRes);
+					Date datEnt = new SimpleDateFormat("yyyy-MM-dd").parse(fechaEnt);
 
 					SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");
 
