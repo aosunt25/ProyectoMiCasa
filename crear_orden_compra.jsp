@@ -150,26 +150,26 @@
         <br>
         </form>
 
-        <form method="post" action="./TerminarOrdenDeCompra">
-           <ul>
-               <li> <input class="formx" type="text" id="DiaDeSolicitud" name="DiaDeSolicitud" placeholder="Dia solicitud"></li>
-               <li><input class="formx" type="text" name="MesDeSolicitud" id="MesDeSolicitud" placeholder="Mes solicitud"></li>
-               <li><input class="formx" type="text" name="AnioDeSolicitud" id="AnioDeSolicitud" placeholder="Anio solicitud"></li>
-               <li><input class="formx" type="text" id="DiaDeEntrega" name="DiaDeEntrega" placeholder="Dia entrega"></li>
-               <li><input class="formx" type="text" name="MesDeEntrega" id="MesDeEntrega" placeholder="Mes entrega"></li>
-               <li><input class="formx" type="text" name="AnioDeEntrega" id="AnioDeEntrega" placeholder="Anio entrega"></li>
-               
-           </ul>
-           
-           
-            
-            
-            <br>
-            
-            
-            
-            <br>
-            <br>
+        <div >
+            <form method="post" action="./TerminarOrdenDeCompra">
+                                <ul class="user-list">
+                    <li><input type="text" name="DiaDeSolicitud" placeholder="Dia" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Anio" class="formx"></li>
+
+                    <li><input type="text" name="DiaDeEntrega" placeholder="Dia" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Anio" class="formx"></li>
+
+
+        </div>
+
+
+
+
+
+        <br>
+
+
+
+        <br>
+        <br>
     </footer>
     </section>
     <br>
