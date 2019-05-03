@@ -36,7 +36,8 @@ public class BorrarProveedor extends HttpServlet{
 			String sql = "DELETE FROM Proveedor WHERE id ='"+id+"';";
 			
 			stat.executeUpdate(sql);
-	
+
+		
 			stat.close();
 			con.close();
 

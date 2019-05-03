@@ -1,5 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
+<style type="text/css">
+    div.ex1 {
+  width: 800px;
+  height: 500px;
+  overflow: scroll;
+}
+</style>
 
 <head>
     <meta charset="utf-8">
@@ -85,35 +92,36 @@
 
         </section>
         <div class="div2">
-            <table border="1">
-                    <c:forEach items="${requestScope.ordenes}" var="orden">
-                                <tr>
-                                <td>
-                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.id}" />
-                                        <br />
-                                    </td>
-                                <td>
-                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.proveedor}" />
-                                        <br />
-                                    </td>  
-                                    <td>   
-                                        &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.fechaPedido}" />
-                                        <br />
-                                    </td>
+            <div class="ex1">
+                <table border="1">
+                        <c:forEach items="${requestScope.ordenes}" var="orden">
+                                    <tr>
                                     <td>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.cantidad_total}" />&emsp;&emsp;&emsp;&emsp;
-                                        <br />
-                                    </td>
+                                            &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.id}" />
+                                            <br />
+                                        </td>
                                     <td>
-                                        <form method="post" action= "./ConsultarPorOrden">
-                                        <input class="user-list button_settings" type="submit" value="Mostrar">
-                                        <input type= "hidden" name="Id" id = "Id" value="${orden.id}"/>  
-                                        </form>
-                                    </td>
-                                </tr>
-                              </c:forEach>
-                </table>            
-
+                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.proveedor}" />
+                                            <br />
+                                        </td>  
+                                        <td>   
+                                            &emsp;&emsp;&emsp;&emsp;<c:out value="${orden.fechaPedido}" />
+                                            <br />
+                                        </td>
+                                        <td>
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${orden.cantidad_total}" />&emsp;&emsp;&emsp;&emsp;
+                                            <br />
+                                        </td>
+                                        <td>
+                                            <form method="post" action= "./ConsultarPorOrden">
+                                            <input class="user-list button_settings" type="submit" value="Mostrar">
+                                            <input type= "hidden" name="Id" id = "Id" value="${orden.id}"/>  
+                                            </form>
+                                        </td>
+                                    </tr>
+                                  </c:forEach>
+                    </table>            
+            </div>
         </div>
 
 </body>
