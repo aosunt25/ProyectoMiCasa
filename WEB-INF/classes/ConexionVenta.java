@@ -60,7 +60,7 @@ public class ConexionVenta extends HttpServlet{
 						todosJuguetes.add(juguete);
 					}
 
-					String error = "Agregaste de más, compa";
+					String error = "Agregaste de más, intenta de nuevo";
 					request.setAttribute("error",error);
 					stat.close();
 					con.close();
