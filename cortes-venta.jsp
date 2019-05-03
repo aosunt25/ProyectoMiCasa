@@ -91,7 +91,7 @@
                               <c:out value="${requestScope.cantidad}"/>
                               <br>
                               Ganancias en el periodo: $ 
-                              <c:out value="${requestScope.precioTot}"/>
+                              <c:out value="${requestScope.precioTot}"/>  
     
                             </ul>
                            </form>

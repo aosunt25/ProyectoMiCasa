@@ -2,16 +2,17 @@
 <html>
 <style type="text/css">
     div.ex1 {
-  width: 800px;
-  height: 500px;
-  overflow: scroll;
-}
+        width: 800px;
+        height: 500px;
+        overflow: scroll;
+    }
+
 </style>
 
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/add_venta-styles.css">
     <link rel="stylesheet" type="text/css" href="css/menu-styles.css">
     <!-- el link de arriba sirve para referenciar el archivo styles.css que se encuentra en la carpeta css, aquí le estás diciendo al programa que vas a usar este archivo para darle estilo a tu html-->
 
@@ -71,17 +72,44 @@
                     <input class="button_settings" type="submit" name="+" value="+">
                 </form>
             </div>
-            <form method="post" action="./BuscarVenta">
-                <input type="text" name="Venta" id="Venta" placeholder="Buscar Venta"><input class="user-list button_settings"  type="submit" value="Buscar">
-            </form>
-               
-            <form method="post" action="./ConsultarVentas">
-                 <input class="user-list button_settings"  type="submit" value="Reiniciar Busqueda">
-            </form>
-
-
         </div>
-        <br><br><br><br><br><br>
+      
+            <div class="edicion">
+                <div class="tercio tercio_primero">
+                    <form method="post" action="./BuscarVenta">
+                        <input class="formx-1" type="text" name="Venta" id="Venta" placeholder="Buscar Venta"><input class="user-list button_settings-2" type="submit" value="Buscar">
+                    </form>
+                    
+                        
+
+                            <form method="post" action="./ConsultarVentas">
+                                <input class="user-list button_settings-2" type="submit" value="Reiniciar Busqueda">
+                            </form>
+
+
+
+                       
+
+
+                    
+
+                </div>
+
+            </div>
+
+        
+
+
+
+
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <div class="div3">
             <div class="quinto quinto_primero center">No.</div>
@@ -94,38 +122,42 @@
 
 
     </section>
-    <div class = "div2">
+    <div class="div2">
         <div class="ex1">
             <table border="1">
                 <c:forEach items="${requestScope.ventas}" var="ven">
                     <tr>
                         <td>
-                             &emsp;&emsp;&emsp;&emsp;<c:out value="${ven.id}" />
+                            &emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${ven.id}" />
                             <br />
                         </td>
                         <td>
-                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${ven.fecha}" />
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${ven.fecha}" />
                             <br />
                         </td>
                         <td>
-                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${ven.hora}" />
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${ven.hora}" />
                             <br />
 
                         <td>
-                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<c:out value="${ven.precioTot}" />
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <c:out value="${ven.precioTot}" />
                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                             <br />
                         </td>
                         <td>
                         <td>
-                            <form method="post" action= "./ConsultarPorVenta">
-                            <input class="user-list button_settings" type="submit" value="Mostrar">
-                            <input type= "hidden" name="Id" id = "Id" value="${ven.id}"/>  
+                            <form method="post" action="./ConsultarPorVenta">
+                                <input class="user-list button_settings" type="submit" value="Mostrar">
+                                <input type="hidden" name="Id" id="Id" value="${ven.id}" />
                             </form>
                         </td>
-                        
+
                         </form>
-                            
+
                         </td>
                     </tr>
                 </c:forEach>
