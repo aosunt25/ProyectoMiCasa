@@ -148,9 +148,9 @@
         <div >
             <form method="post" action="./TerminarOrdenDeCompra">
                                 <ul class="user-list">
-                    <li><input type="text" name="DiaDeSolicitud" placeholder="Dia" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Anio" class="formx"></li>
+                    <li><input type="text" name="DiaDeSolicitud" placeholder="Dia" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Anio" class="formx" required></li>
 
-                    <li><input type="text" name="DiaDeEntrega" placeholder="Dia" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Anio" class="formx"></li>
+                    <li><input type="text" name="DiaDeEntrega" placeholder="Dia" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Anio" class="formx" required></li>
 
 
         </div>
