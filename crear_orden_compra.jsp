@@ -111,15 +111,10 @@
                         </td>
                         <td>
                             $
-                            <c:out value="${jug.precio_proveedor}" />
+                            <c:out value="${jug.precio_proveedor}" /> por unidad
                             <br />
                         </td>
 
-                        <td>
-                            $
-                            <c:out value="${jug.precio}" />
-                            <br />
-                        </td>
                         <td>
                             <!-- <form method="post" action="./BorrarJugueteDeOrden">
                                     <input class="user-list button_settings" type="submit" value="Borrar">
