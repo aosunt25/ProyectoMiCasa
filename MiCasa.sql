@@ -89,6 +89,8 @@ create table Orden_Juguete(
 DROP USER 'micasa'@'localhost';
 flush privileges;
 
+INSERT INTO Usuario (nombre,contraseña,usuario) VALUES ('administrador', 'admin1234', 'admin');
+
 CREATE USER 'micasa'@'localhost' IDENTIFIED BY 'mipass';
 GRANT SELECT, UPDATE, INSERT, DELETE ON MiCasa.* TO 'micasa'@'localhost';
 
