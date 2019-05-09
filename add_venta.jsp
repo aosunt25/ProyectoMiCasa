@@ -3,7 +3,9 @@
 
 <head>
     <title>Add Venta</title>
-    <meta charset=utf-8>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/add_venta-styles.css">
     <link rel="stylesheet" type="text/css" href="css/especial.css">
@@ -48,7 +50,7 @@
 </style>
 
 <body>
-    <h1>Anadir nueva venta</h1>
+    <h1>Añadir nueva venta</h1>
     <br>
 
 

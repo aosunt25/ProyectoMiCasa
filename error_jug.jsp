@@ -4,9 +4,11 @@
 
 <head>
     <title>Error con juguete</title>
-    <meta charset=utf-8>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/add_venta-styles.css">    
+    <link rel="stylesheet" type="text/css" href="css/add_venta-styles.css">
 </head>
 
 <h1>Hubo un error al intentar ingresar el juguete</h1>
@@ -17,7 +19,7 @@
 
 <body>
 
-    
+
     <div>
         <form action="./ConsultarProveedor_Juguete" method="post">
             <input class="button_settings-1" type="submit" value="Regresar">

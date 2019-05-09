@@ -10,7 +10,9 @@
 </style>
 
 <head>
-    <meta charset="utf-8">
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/crear_corte-styles.css">
     <!-- el link de arriba sirve para referenciar el archivo styles.css que se encuentra en la carpeta css, aquí le estás diciendo al programa que vas a usar este archivo para darle estilo a tu html-->
@@ -28,7 +30,7 @@
 </head>
 <header>
     <a href="menu.jsp"><img src="img/1.jpg"> Comercializadora MiCasa </a>
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="index.html"><input class="button_settings-1" id="boton" type="button" value="Cerrar sesion"> </a>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="index.html"><input class="button_settings-1" id="boton" type="button" value="Cerrar sesión"> </a>
 
     <br>
 
@@ -52,7 +54,7 @@
             <div class="quinto"><a href="inventario.jsp"><input class="button" type="submit" value="INVENTARIO"></a></div>
         </form>
         <form method="post" action="./ConsultarOrden">
-            <div class="quinto"><a href="ordenes.jsp"><input class="button" type="submit" value="ORDENES DE COMPRA"></a></div>
+            <div class="quinto"><a href="ordenes.jsp"><input class="button" type="submit" value="ÓRDENES DE COMPRA"></a></div>
         </form>
         <form method="post" action="./ConsultarProveedor">
             <div class="quinto"><a href="proveedores.jsp"><input class="button" type="submit" value="PROVEEDORES"></a></div>
@@ -81,9 +83,9 @@
         <section>
             <form method="post" action="./Corte">
                 <ul class="user-list">
-                    <li><input type="text" name="DiaDeSolicitud" placeholder="Dia" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Anio" class="formx" required></li>
+                    <li><input type="text" name="DiaDeSolicitud" placeholder="Día" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Año" class="formx" required></li>
 
-                    <li><input type="text" name="DiaDeEntrega" placeholder="Dia" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Anio" class="formx" required></li>
+                    <li><input type="text" name="DiaDeEntrega" placeholder="Día" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Año" class="formx" required></li>
 
                     <br>
                     <li><input class="button_settings-1" type="submit" value="Filtrar"></li>

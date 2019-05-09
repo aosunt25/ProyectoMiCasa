@@ -45,8 +45,10 @@
 </style>
 
 <head>
-    <title>Crear Ordenes</title>
-    <meta charset=utf-8>
+    <title>Crear Órdenes</title>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/crear_oc-styles.css">
     <link rel="stylesheet" type="text/css" href="css/especial.css">
@@ -55,7 +57,7 @@
 </head>
 
 <body>
-    <h1>Crear una nueva orden de compra</h1>
+    <h1>Crear una nueva órden de compra</h1>
     <br>
     <br>
     <br>
@@ -97,7 +99,7 @@
         <footer>
             <br>
             <h2>
-                Total de Orden
+                Total de Órden
             </h2>
         </footer>
         <br>
@@ -145,12 +147,12 @@
         <br>
         </form>
 
-        <div >
+        <div>
             <form method="post" action="./TerminarOrdenDeCompra">
-                                <ul class="user-list">
-                    <li><input type="text" name="DiaDeSolicitud" placeholder="Dia" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Anio" class="formx" required></li>
+                <ul class="user-list">
+                    <li><input type="text" name="DiaDeSolicitud" placeholder="Día" class="formx"><input type="text" name="MesDeSolicitud" placeholder="Mes" class="formx"><input type="text" name="AnioDeSolicitud" placeholder="Año" class="formx" required></li>
 
-                    <li><input type="text" name="DiaDeEntrega" placeholder="Dia" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Anio" class="formx" required></li>
+                    <li><input type="text" name="DiaDeEntrega" placeholder="Día" class="formx"><input type="text" name="MesDeEntrega" placeholder="Mes" class="formx"><input type="text" name="AnioDeEntrega" placeholder="Año" class="formx" required></li>
 
 
         </div>

@@ -11,7 +11,9 @@
 </style>
 
 <head>
-    <meta charset="utf-8">
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/prov-styles.css">
     <link rel="stylesheet" type="text/css" href="css/add_venta-styles.css">
@@ -30,7 +32,7 @@
 </head>
 <header>
     <a href="menu.jsp"><img src="img/1.jpg"> Comercializadora MiCasa </a>
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="index.html"><input class="button_settings-1" id="boton" type="button" value="Cerrar sesion"> </a>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="index.html"><input class="button_settings-1" id="boton" type="button" value="Cerrar sesión"> </a>
 
 </header>
 
@@ -50,7 +52,7 @@
             <div class="quinto"><a href="inventario.jsp"><input class="button" type="submit" value="INVENTARIO"></a></div>
         </form>
         <form method="post" action="./ConsultarOrden">
-            <div class="quinto"><a href="ordenes.jsp"><input class="button" type="submit" value="ORDENES DE COMPRA"></a></div>
+            <div class="quinto"><a href="ordenes.jsp"><input class="button" type="submit" value="ÓRDENES DE COMPRA"></a></div>
         </form>
         <form method="post" action="./ConsultarProveedor">
             <div class="quinto"><a href="proveedores.jsp"><input class="button" type="submit" value="PROVEEDORES"></a></div>
@@ -77,24 +79,24 @@
 
 
         </div>
-        
-        
-        
+
+
+
         <div class="edicion">
             <div class="tercio tercio_primero">
-               <form method="post" action="./BuscarProveedor">
-            <input class="formx-1" type="text" name="Proveedor"  placeholder="Buscar Proveedor"><input class="user-list button_settings-2" id="except2" type="submit" value="Buscar">
-        </form> 
-               
-               <form method="post" action="./ConsultarProveedor">
-            <input class="user-list button_settings-2" id="except2" type="submit" value="Reiniciar Busqueda">
-        </form>
-                
+                <form method="post" action="./BuscarProveedor">
+                    <input class="formx-1" type="text" name="Proveedor" placeholder="Buscar Proveedor"><input class="user-list button_settings-2" id="except2" type="submit" value="Buscar">
+                </form>
+
+                <form method="post" action="./ConsultarProveedor">
+                    <input class="user-list button_settings-2" id="except2" type="submit" value="Reiniciar Búsqueda">
+                </form>
+
             </div>
-            
+
         </div>
-        
-        
+
+
         <br>
         <br>
         <br>
